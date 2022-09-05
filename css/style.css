@@ -14,11 +14,11 @@ body {
 }
 
 header {
-  /* height: 100px; */
   background-color: #333;
   display: flex;
   writing-mode: horizontal-tb;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header > h1 {
@@ -44,7 +44,7 @@ header > h1 {
   color: #fff;
   font-size: 1.1em;
   text-decoration: none;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 10px;
 }
 
 #nav-menu > ul > li > a:hover {
@@ -61,23 +61,20 @@ header > h1 {
 #main {
   width: 60%;
   margin: 0 auto;
-  padding: 30px 40px;
   background-color: #fff;
 }
 
-article {
-  margin-left: 30px;
+#main > h1 {
+  margin: 0;
+  padding: 30px 40px;
 }
 
-aside {
-  width: 70%;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.9em;
-  font-style: italic;
-  background-color: #dbdcdb;
-  border-radius: 4px;
-  padding: 5px 40px 10px 40px;
-  margin: 20px auto;
+article {
+  padding: 30px 40px;
+}
+
+.species-text > p {
+  width: 80%;
 }
 
 .chosen-img {
@@ -91,6 +88,131 @@ aside {
 
 .chosen-img > img {
   min-width: 0;
+}
+
+aside {
+  width: 70%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  font-style: italic;
+  background-color: #dbdcdb;
+  border-radius: 4px;
+  padding: 5px 40px 10px 40px;
+  margin: 20px auto;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  margin-top: 30px;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#merch {
+  display: flex;
+  writing-mode: horizontal-tb;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+  border-radius: 10px; /* 5px rounded corners */
+  flex: 25%;
+  margin: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+  padding: 20px 0;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.card > img {
+  border-radius: 10px 10px 0 0;
+}
+
+.buy-button {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f0eead;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background-color: #d6d593;
+}
+
+form {
+  padding: 30px 40px;
+}
+
+.form-item > input {
+  border: none;
+  background-color: #eaecea;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.form-item > textarea {
+  border: none;
+  background-color: #eaecea;
+  width: 70%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-item:nth-child(3) > input {
+  width: 500px;
+  height: 200px;
+}
+
+.form-item > input::placeholder {
+  vertical-align: top;
+  text-align: start;
+}
+
+.form-submit > input {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #eaecea;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.form-submit > input:hover {
+  background-color: #b3b3b3;
 }
 
 footer {
@@ -109,4 +231,62 @@ footer > section {
 
 footer > section > div {
   margin: 0 20px;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1200px) {
+  #main {
+    width: 80%;
+  }
+  .card {
+    flex: 40%;
+  }
+
+  #nav-menu > ul > li {
+    display: inline;
+  }
+
+  footer > section {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #main {
+    width: 100%;
+    margin: 0;
+  }
+
+  #nav-menu > ul > li > a {
+    padding: 5px 5px;
+  }
+
+  article {
+    padding: 20px;
+  }
+
+  .chosen-img {
+    display: block;
+  }
+
+  .chosen-img > img {
+    width: 100%;
+  }
+
+  .chosen-img > img:nth-child(2) {
+    margin: 0;
+  }
+
+  .card {
+    flex: 100%;
+  }
+
+  .form-item > textarea {
+    width: 100%;
+  }
+
+  footer > section {
+    width: 100%;
+  }
 }
