@@ -1,0 +1,27 @@
+{
+  "name": "animals-website",
+  "version": "1.0.0",
+  "description": "A website about animals",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:md": "npx markdownlint **/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienjego/Animals-website.git"
+  },
+  "keywords": [
+    "animals"
+  ],
+  "author": "Julien Jégo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julienjego/Animals-website/issues"
+  },
+  "homepage": "https://github.com/julienjego/Animals-website#readme",
+  "devDependencies": {
+    "markdownlint": "^0.26.2",
+    "markdownlint-cli": "^0.32.2"
+  }
+}
